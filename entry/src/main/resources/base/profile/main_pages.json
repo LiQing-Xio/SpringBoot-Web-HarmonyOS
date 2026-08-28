@@ -1,0 +1,17 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/Login",
+    "pages/Register",
+    "pages/UserHome",
+    "pages/AdminHome",
+    "pages/HealthRecord",
+    "pages/PatientReport",
+    "pages/FamilyDoctor",
+    "pages/UserManage",
+    "pages/RoleManage",
+    "pages/BulletinManage",
+    "pages/KnowledgeManage",
+    "pages/Page1"
+  ]
+}

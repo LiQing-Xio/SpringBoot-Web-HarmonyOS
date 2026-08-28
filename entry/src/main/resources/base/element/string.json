@@ -1,0 +1,24 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "悦享家庭医生"
+    },
+    {
+      "name": "location_permission_reason",
+      "value": "需要获取您的位置信息，以便提供精准的本地服务"
+    },
+    {
+      "name": "locationReason",
+      "value": "需要定位权限以完成打卡"
+    }
+  ]
+}
