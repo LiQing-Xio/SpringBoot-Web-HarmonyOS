@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: 家庭医生管理系统
+  profiles:
+    active: dev
+  mvc:
+    static-path-pattern: /**
+  web:
+    resources:
+      static-locations: file:E:/NoteStudy/upload/image/
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+      location: E:/NoteStudy/upload/image/
+
+# 添加服务器配置
+server:
+  address: 0.0.0.0    # 允许所有网络接口访问
+  port: 1886          # 端口号
+  servlet:
+    context-path: /yx  # 根据你的项目，可能需要这个
+
+file:
+  upload:
+    path: E:/NoteStudy/upload/image/

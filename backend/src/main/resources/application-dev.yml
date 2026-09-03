@@ -1,0 +1,42 @@
+spring:
+ datasource:
+  type: com.alibaba.druid.pool.DruidDataSource
+  druid:
+   driver-class-name: com.mysql.cj.jdbc.Driver
+   url: jdbc:mysql://localhost:3306/yx-f?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true&nullCatalogMeansCurrent=true
+   username: root
+   password: 123456
+   initial-size: 10
+   max-active: 100
+   min-idle: 10
+   max-wait: 60000
+   pool-prepared-statements: true
+   max-pool-prepared-statement-per-connection-size: 20
+   time-between-eviction-runs-millis: 60000
+   min-evictable-idle-time-millis: 300000
+# MyBatisPlus的相关配置
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*/*.xml
+  global-config:
+#数据库相关配置
+   db-config:
+  #主键类型 AUTO:"数据库ID自增", INPUT:"用户输入ID", ID_WORKER:"全局唯一ID (数字类型唯一 ID)", UUID:"全局唯一ID UUID";
+    id-type: AUTO
+    logic-delete-value: -1
+    logic-not-delete-value: 0
+    logic-delete-field: is_deleted
+   banner: false
+#原生配置
+  configuration:
+   map-underscore-to-camel-case: true
+   cache-enabled: false
+   call-setters-on-nulls: true
+   jdbc-type-for-null: 'null'
+   log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+ tomcat:
+  uri-encoding: UTF-8
+ servlet:
+  context-path: /yx
+ port: 8086
+

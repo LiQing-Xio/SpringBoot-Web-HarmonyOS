@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yx.pat.mapper.PatientMapper">
+    <insert id="insertpatuser">
+        INSERT INTO user_pat (user_id,id)VALUE(#{userid},#{id})
+    </insert>
+    <insert id="insertregpat">
+        INSERT INTO reg_pat (id,rid)VALUE(#{id},#{rid})
+    </insert>
+
+    <update id="hfsave">
+        UPDATE patient
+        SET hf = #{hf}
+        WHERE id = #{id};
+    </update>
+
+
+    <select id="ghlist" resultType="com.yx.pat.entity.Patienta">
+        SELECT registration.*,patient.*
+        FROM registration
+                 JOIN reg_pat ON registration.rid = reg_pat.rid
+                 JOIN patient ON patient.id = reg_pat.id
+    </select>
+    <select id="ByUsernameOrId" resultType="java.lang.Integer">
+        SELECT user_id
+        FROM sys_user
+        WHERE username = #{userName}
+    </select>
+    <select id="selectByuseridorid" resultType="java.lang.Integer">
+        SELECT id
+        FROM user_pat
+        WHERE user_id = #{userid}
+
+    </select>
+    <select id="byidlist" resultType="com.yx.pat.entity.Patienta">
+        SELECT p.*
+        FROM patient p
+                 JOIN user_pat up ON p.id = up.id
+        WHERE up.user_id =  #{userid};
+    </select>
+    <select id="byidjqlist" resultType="com.yx.pat.entity.Patienta">
+        SELECT r.*
+        FROM registration r
+                 JOIN reg_pat rp ON r.rid = rp.rid
+                 JOIN user_pat up ON rp.id = up.id
+        WHERE up.user_id = #{userid}
+    </select>
+
+</mapper>

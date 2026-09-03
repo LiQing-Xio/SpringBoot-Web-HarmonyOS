@@ -10,3 +10,18 @@
 /.clang-tidy
 **/.test
 /.appanalyzer
+# Spring Boot / Maven
+**/target/
+*.class
+*.log
+
+# Vue / Node
+**/node_modules/
+**/dist/
+
+# IntelliJ IDEA
+**/.idea/
+*.iml
+
+# VS Code
+.vscode/
