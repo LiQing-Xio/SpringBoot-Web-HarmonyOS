@@ -1,4 +1,4 @@
-import { router } from '@kit.ArkUI';
+ import { router } from '@kit.ArkUI';
 
 @Entry
 @Component
